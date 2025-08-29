@@ -1,0 +1,16 @@
+﻿<div class="service-card">
+    @if (!string.IsNullOrEmpty(Icon))
+    {
+        <div class="icon">@((MarkupString)Icon)</div>
+    }
+    <h2>@Title</h2>
+    <p>@Description</p>
+</div>
+
+@code {
+    [Parameter] public string Title { get; set; }
+    [Parameter] public string Description { get; set; }
+    [Parameter] public string Icon { get; set; }  // HTML for icon
+}
+
+
