@@ -1,0 +1,24 @@
+﻿@page "/bio"
+
+<div class="bio-container">
+    <h1>@Name</h1>
+    <img src="images/profile.jpg" alt="Profile" class="profile-img" />
+
+    <p>@Biography</p>
+
+    <h3 class="bold">My Skills</h3>
+    <ul>
+        @foreach (var skill in Skills)
+        {
+            <li>@skill</li>
+        }
+    </ul>
+</div>
+
+@code {
+    private string Name = "Muhammad Zain Ulabideen";
+
+    private string Biography = "As a final-year Software Engineering student, I am a mid-level .NET developer with hands-on experience in building applications. I am eager to further enhance my skills by working on real-time projects that provide practical exposure and professional growth";
+
+    private List<string> Skills = new() { "C# / .NET", "MSSQL", "ASP.NET Core MVC" };
+}
