@@ -1,0 +1,25 @@
+﻿<div class="faq-item">
+    <div class="faq-question" @onclick="Toggle">
+        <h3>@Question</h3>
+        <button class="toggle-btn">
+            @(isOpen ? "-" : "+")
+        </button>
+    </div>
+
+    @if (isOpen)
+    {
+        <p class="faq-answer">@Answer</p>
+    }
+</div>
+
+@code {
+    [Parameter] public string Question { get; set; }
+    [Parameter] public string Answer { get; set; }
+
+    private bool isOpen = true;
+
+    private void Toggle()
+    {
+        isOpen = !isOpen;   
+    }
+}
